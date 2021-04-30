@@ -1,30 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { Col } from "shards-react";
-import { authenticationService } from '../../services/index';
+import Typography from "@material-ui/core/Typography";
 
-function PageTitle(props) {
-  const { title, subtitle, className, logout } = props;
-  const classes = classNames(className, "center");
-
-  const handleClick = () => {
-    authenticationService.Logout();
-    props.history.push('/login');
-  }
-
+export function PageTitle(props) {
   return (
-    <Col xs="12" sm="4" className={classes}>
-      <span className="text-uppercase page-subtitle">{subtitle}</span>
-      <h3 className="page-title">{title}</h3>
-      {logout? <button onClick={handleClick}>Logout</button>: ""}
-    </Col>
+    <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      {props.children}
+    </Typography>
   );
 }
 
 PageTitle.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  children: PropTypes.node,
 };
-
-export default PageTitle;

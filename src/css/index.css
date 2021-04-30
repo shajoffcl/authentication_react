@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  font-family: "Nunito", sans-serif !important;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
@@ -19,6 +18,7 @@ body {
   margin: 0;
   background-color: #f6f8fa;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 code {
@@ -37,4 +37,52 @@ h5,
 h6 {
   padding: 0;
   margin: 0;
+}
+
+.home-page-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e9bcb7;
+  background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
+  color: white;
+}
+
+.home-page-nav {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 35px;
+}
+.home-page-main {
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.username {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.exit-icon {
+  padding-right: 20px;
+  font-size: large;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.welcome {
+  font-size: 8.4em;
+  font-weight: bold;
+  border: 1px dotted white;
+}
+
+.error {
+  height: 100vh;
+  width: 100vw;
+  padding: 25px;
 }

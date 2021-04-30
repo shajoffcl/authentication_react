@@ -1,3 +1,3 @@
-export { default as SignIn } from './SignIn';
-export { default as Home } from './Home';
-export { default as Admin } from './Admin';
+export { SignIn } from './SignIn.jsx';
+export { Home } from './Home.jsx';
+export { Dashboard } from './Dashboard';
