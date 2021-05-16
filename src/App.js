@@ -1,18 +1,27 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { PrivateRoute } from "./components/index";
-import { SignIn, Home, Dashboard } from "./views/index";
-import { Role } from "./config/index";
+import { SignIn, Home, Error, Index } from "./views/index";
+import { TheLayout } from "./containers/index";
+import { Role } from "./_helpers/index";
 
-function App() {
+export default function App(props) {
   return (
     <Switch>
-      <PrivateRoute exact path="/" component={Home} />
-      <PrivateRoute exact path="/admin" roles={Role.Admin} component={Dashboard} />
       <Route exact path="/login" component={SignIn} />
-      <Redirect to="/login" />
+      <PrivateRoute exact path="/" component={Home} />
+      <PrivateRoute
+        path="/admin"
+        roles={Role.Admin}
+        component={TheLayout}
+        {...props}
+      />
+      {/* <PrivateRoute
+        path="/affiliate_panel/partnerList"
+        component={Index}
+        {...props}
+      /> */}
+      <Route path="*" component={Error} />
     </Switch>
   );
 }
-
-export default App;

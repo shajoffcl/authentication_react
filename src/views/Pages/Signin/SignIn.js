@@ -9,9 +9,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Alert } from "@material-ui/lab";
-import useStyles from "../styles/signin";
-import { Copyright } from "../components/index";
-import { authenticationService } from "../services/index";
+import useStyles from "./Style";
+import { Copyright } from "../../../components/index";
+import { authenticationService } from "../../../_services/index";
 
 export function SignIn(props) {
   if (authenticationService.currentUserValue) {

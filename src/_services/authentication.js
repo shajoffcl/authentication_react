@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
 import { BASE_URL, URLConstant } from "../config/index";
-import { handleResponse } from '../helpers/index';
+import { handleResponse } from '../_helpers/index';
 
 const currentUserSubject = new BehaviorSubject(
   JSON.parse(localStorage.getItem("currentUser"))

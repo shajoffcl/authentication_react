@@ -1,7 +1,7 @@
 import React from "react";
-import { authenticationService } from "../services/index";
+import { authenticationService } from "../../../_services/index";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import { Copyright } from "../components/index";
+import { Copyright } from "../../../components/index";
 
 export function Home(props) {
   

@@ -4,9 +4,10 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./css/index.css";
+import { history } from "./_helpers/index";
 
 const app = (
-  <BrowserRouter>
+  <BrowserRouter history={history}>
     <App />
   </BrowserRouter>
 );

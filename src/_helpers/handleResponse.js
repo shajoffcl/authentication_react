@@ -1,4 +1,4 @@
-import { authenticationService } from "../services/index";
+import { authenticationService } from "../_services/index";
 
 export function handleResponse(response) {
   console.log(response);
