@@ -7,7 +7,7 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@material-ui/data-grid";
-import { admin } from "../../_services/index";
+import { user } from "../../_services/index";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
@@ -72,7 +72,7 @@ export function UserDocumnetList() {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const data = await admin.getUserDocumentList();
+        const data = await user.getUserDocumentList();
         console.log("user", data.res);
         setResponse(data.result);
         setOpen(false);
@@ -94,7 +94,7 @@ export function UserDocumnetList() {
     try {
       console.log(input);
       setOpen(true);
-      const data = await admin.getUserDocumentList(input);
+      const data = await user.getUserDocumentList(input);
       console.log("serach user", data.res);
       setResponse(data.result);
       setOpen(false);

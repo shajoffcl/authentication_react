@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#e4d1b9",
+    backgroundColor: "#8f8f8f",
     cursor: "pointer",
     "& > *": {
       margin: theme.spacing(1),

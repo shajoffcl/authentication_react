@@ -1,7 +1,7 @@
 export { SignIn } from "./Pages/Signin/SignIn";
 export { Home } from "./Pages/Home/Home";
 export { Error } from "./Pages/Error/Error";
-export { default as Module } from "./Pages/Dashboard/Module";
+export { default as SubModule } from "./Pages/Dashboard/SubModule";
 export { AdminHome } from "./Pages/Dashboard/Home";
 export { BankDetailReport } from "./AdminCompliance/BankDetailReport";
 export { UserDocumnetList } from "./AdminCompliance/UserDocumentList";

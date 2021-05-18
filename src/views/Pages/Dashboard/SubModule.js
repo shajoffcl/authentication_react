@@ -4,7 +4,7 @@ import { PaperRender } from "../../../components/index";
 import { useStyles } from "./Style";
 import { withRouter } from "react-router-dom";
 
-function Module(props) {
+function SubModule(props) {
   const classes = useStyles();
   const [error, setError] = React.useState(false);
   const [module, setModule] = React.useState([]);
@@ -39,4 +39,4 @@ function Module(props) {
   );
 }
 
-export default withRouter(Module);
+export default withRouter(SubModule);

@@ -2,18 +2,22 @@ import React from "react";
 import { PageTitle, Loader } from "../../components/index";
 import { Divider } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
-import { DataGrid, GridToolbarContainer, GridToolbarExport } from "@material-ui/data-grid";
-import { admin } from "../../_services/index";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@material-ui/data-grid";
+import { admin_compliance } from "../../_services/index";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 const columns = [
-  { field: "user_name", headerName: "Username", width: 130},
+  { field: "user_name", headerName: "Username", width: 130 },
   { field: "modified_on", headerName: "Request Date", width: 230 },
   { field: "first_name", headerName: "First Name", width: 130 },
-  { field: "last_name", headerName: "Last Name", width: 130},
+  { field: "last_name", headerName: "Last Name", width: 130 },
   { field: "account_number", headerName: "Account Number", width: 200 },
-  { field: "account_type", headerName: "Account Type", width: 200},
+  { field: "account_type", headerName: "Account Type", width: 200 },
   { field: "IFSC", headerName: "IFSC Code", width: 130 },
   { field: "status", headerName: "Status", width: 130 },
   { field: "approved_by", headerName: "Approved By", width: 150 },
@@ -57,7 +61,7 @@ export function BankDetailReport() {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const data = await admin.getUserBankDetail();
+        const data = await admin_compliance.getUserBankDetail();
         setResponse(data.result);
         setOpen(false);
       } catch (err) {
@@ -78,7 +82,7 @@ export function BankDetailReport() {
     try {
       console.log(input);
       setOpen(true);
-      const data = await admin.getUserBankDetail(input);
+      const data = await admin_compliance.getUserBankDetail(input);
       setResponse(data.result);
       setOpen(false);
     } catch (err) {
@@ -132,13 +136,13 @@ export function BankDetailReport() {
         ) : (
           <DataGrid
             pagination
-            paginationMode= "server"
-            rowCount = {response.total_records}
+            paginationMode="server"
+            rowCount={response.total_records}
             rows={response}
             columns={columns}
             getRowId={(row) => row.modified_on}
             pageSize={10}
-            page = {1}
+            page={0}
             checkboxSelection
             components={{
               Toolbar: CustomToolbar,

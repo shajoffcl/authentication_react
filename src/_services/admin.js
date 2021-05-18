@@ -38,46 +38,7 @@ const getSubModuleData = (param) => {
     });
 };
 
-const getUserBankDetail = (data) => {
-  return axios
-    .get(BASE_URL + URLConstant.GET_USER_BANK_DETAIL, {
-      headers: {
-        "x-auth-token": authHeader(),
-      },
-      params: {
-        ...data,
-      },
-    })
-    .then(handleResponse)
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
+export const admin = {
+  getModuleData,
+  getSubModuleData,
 };
-
-const getUserDocumentList = (data) => {
-  return axios
-    .get(BASE_URL + URLConstant.GET_USER_DOCUMENT_LIST, {
-      headers: {
-        "x-auth-token": authHeader(),
-      },
-      params: {
-        ...data,
-      },
-    })
-    .then(handleResponse)
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
-};
-
-export const admin = { getModuleData, getSubModuleData, getUserBankDetail, getUserDocumentList };
