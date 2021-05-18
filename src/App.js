@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { PrivateRoute } from "./components/index";
 import { SignIn, Home, Error, Index } from "./views/index";
 import { TheLayout } from "./containers/index";
-import { Role } from "./_helpers/index";
+import { Role } from "./config/index";
 
 export default function App(props) {
   return (
