@@ -1,10 +1,10 @@
 import axios from "axios";
 import { authHeader, handleResponse } from "../_helpers/index";
-import { BASE_URL, URLConstant } from "../config/index";
+import { BASE_URL, API } from "../config/index";
 
 const getModuleData = () => {
   return axios
-    .get(BASE_URL + URLConstant.GET_ADMIN_DATA, {
+    .get(BASE_URL + API.GET_MODULE_LIST, {
       headers: {
         "x-auth-token": authHeader(),
       },
@@ -22,7 +22,7 @@ const getModuleData = () => {
 
 const getSubModuleData = (param) => {
   return axios
-    .get(BASE_URL + URLConstant.GET_ADMIN_DATA + param, {
+    .get(BASE_URL + API.GET_MODULE_LIST + param, {
       headers: {
         "x-auth-token": authHeader(),
       },

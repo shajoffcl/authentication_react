@@ -1,1 +1,1 @@
-export { BASE_URL, URLConstant } from './url.constants';
+export { BASE_URL, API } from './url.constants';

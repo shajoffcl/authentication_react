@@ -1,10 +1,10 @@
 import axios from "axios";
 import { authHeader, handleResponse } from "../_helpers/index";
-import { BASE_URL, URLConstant } from "../config/index";
+import { BASE_URL, API } from "../config/index";
 
 const getUserDocumentList = (data) => {
   return axios
-    .get(BASE_URL + URLConstant.GET_USER_DOCUMENT_LIST, {
+    .get(BASE_URL + API.GET_USER_DOCUMENT_LIST, {
       headers: {
         "x-auth-token": authHeader(),
       },

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
-import { BASE_URL, URLConstant } from "../config/index";
+import { BASE_URL, API } from "../config/index";
 import { handleResponse } from '../_helpers/index';
 
 const currentUserSubject = new BehaviorSubject(
@@ -9,7 +9,7 @@ const currentUserSubject = new BehaviorSubject(
 
 const Login = (user_name, password) => {
   return axios
-    .post(BASE_URL + URLConstant.GET_USER_DATA, { user_name, password })
+    .post(BASE_URL + API.USER_LOGIN, { user_name, password })
     .then(handleResponse)
     .then((user) => {
       console.log(user);
