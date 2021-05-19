@@ -4,15 +4,13 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#8f8f8f",
-    cursor: "pointer",
+    alignItems: "center",
     "& > *": {
       margin: theme.spacing(1),
       width: theme.spacing(35),
-      height: theme.spacing(10),
-      padding: theme.spacing(1),
+      height: theme.spacing(8),
+      paddingTop: theme.spacing(2.5),
+      textAlign: "center",
     },
   },
 }));
-
-// #00c2c2

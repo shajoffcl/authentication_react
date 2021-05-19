@@ -7,8 +7,8 @@ export function PaperRender(props) {
 
   return (
     <div className={classes.root}>
-      <Paper elevation={3} onClick={props.handleClick}>
-        <h3>{props.module}</h3>
+      <Paper elevation={3} onClick={props.handleClick} className="scale">
+        <h5>{props.module}</h5>
       </Paper>
     </div>
   );

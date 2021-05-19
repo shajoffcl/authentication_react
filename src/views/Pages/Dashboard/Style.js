@@ -3,13 +3,14 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
+    alignItems: "center",
     height: '100%',
     backgroundColor: '#f0f0f0',
-    paddingLeft: "25px",
+    paddingLeft: "60px",
     "& > *": {
-      margin: theme.spacing(2),
+      margin: theme.spacing(1),
       width: theme.spacing(25),
-      height: theme.spacing(11),
+      height: theme.spacing(10),
     },
   },
 }));

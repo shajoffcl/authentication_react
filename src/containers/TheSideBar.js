@@ -38,21 +38,32 @@ export function TheSideBar(props) {
         </div>
         <Divider />
         <MenuList>
-          <NavLink to="/admin" style={{ textDecoration: "none" }}>
-            <MenuItem selected={activeRoute("/admin")}>
+          <NavLink
+            to="/admin"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <MenuItem
+              selected={activeRoute("/admin")}
+              onClick={handleDrawerClose}
+            >
               <ListItemText primary="Home" />
             </MenuItem>
+            <Divider />
           </NavLink>
           {res.map((prop, idx) => {
             return (
               <NavLink
                 key={idx}
                 to={`${prop.module_link}?module_id=${prop.module_id}`}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "black" }}
               >
-                <MenuItem selected={activeRoute(prop.module_link)}>
+                <MenuItem
+                  selected={activeRoute(prop.module_link)}
+                  onClick={handleDrawerClose}
+                >
                   <ListItemText primary={prop.navigation_name} />
                 </MenuItem>
+                <Divider />
               </NavLink>
             );
           })}

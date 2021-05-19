@@ -5,13 +5,13 @@ import Container from "@material-ui/core/Container";
 import { Copyright } from "../components/index";
 import useStyles from "./Style";
 import { TheHeader, TheContent, TheSideBar } from "./index";
-import {authenticationService, admin} from "../_services/index";
+import { authenticationService, admin } from "../_services/index";
 
 export function TheLayout(props) {
   const currentUser = authenticationService.currentUserValue;
 
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [res, setRes] = React.useState([]);
 
@@ -34,24 +34,24 @@ export function TheLayout(props) {
     fetchData();
   }, []);
 
-  if(!currentUser) return null;
+  if (!currentUser) return null;
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-        <TheHeader handleDrawerOpen={handleDrawerOpen} open={open} {...props} />
-        <TheSideBar
-          handleDrawerClose={handleDrawerClose}
-          open={open}
-          res={res}
-          {...props}
-        />
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container maxWidth="lg" className={classes.container}>
-            <TheContent {...props} />
-          </Container>
-        </main>
+      <TheHeader handleDrawerOpen={handleDrawerOpen} open={open} {...props} />
+      <TheSideBar
+        handleDrawerClose={handleDrawerClose}
+        open={open}
+        res={res}
+        {...props}
+      />
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+          <TheContent {...props} />
+        </Container>
+      </main>
     </div>
   );
 }
